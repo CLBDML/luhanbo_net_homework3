@@ -1,0 +1,103 @@
+/* 引入 Google Fonts 中的 Poppins 字体，提供多种字重的选项 */
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+
+/* 重置所有元素的外边距和内边距，使用 Poppins 字体作为默认字体 */
+* {
+  margin: 0; /* 清除所有元素的外边距 */
+  padding: 0; /* 清除所有元素的内边距 */
+  font-family: "Poppins", sans-serif; /* 设置所有文本的字体为 Poppins，如未定义则使用 sans-serif 作为备用字体 */
+}
+
+/* 设置页面背景样式，包括背景颜色和图像，固定背景并应用混合模式 */
+body {
+  background: #000 url(./images/a2.jpg); /* 设置背景颜色为黑色，同时加载背景图片 */
+  background-attachment: fixed; /* 固定背景，使其不随页面滚动而滚动 */
+  background-blend-mode: hard-light; /* 应用混合模式，以实现图像与背景的混合效果 */
+}
+
+/* 定义容器样式，通过绝对定位实现定位和居中显示内容 */
+.container {
+  position: absolute; /* 使用绝对定位，将容器相对于其最近的具有定位的祖先元素定位 */
+  top: 80px; /* 与顶部的距离为80像素 */
+  left: 100px; /* 与左侧的距离为100像素 */
+  right: 100px; /* 与右侧的距离为100像素 */
+  bottom: 80px; /* 与底部的距离为80像素 */
+  background: url(./images/a2.jpg); /* 设置容器的背景图片 */
+  background-attachment: fixed; /* 固定容器的背景 */
+  display: flex; /* 使用弹性布局容器 */
+  justify-content: center; /* 在水平方向上居中内容 */
+  align-items: center; /* 在垂直方向上居中内容 */
+  flex-direction: column; /* 设置内容的排列方向为纵向（垂直） */
+  box-shadow: 0 50px 50px rgba(0, 0, 0, 0.5), 0 0 0 100px rgba(0, 0, 0, 0.1);
+  /* 创建内容区域的阴影效果，包括内阴影和外阴影 */
+}
+
+/* 定义容器内部标题的样式 */
+.container h2 {
+  text-align: center; /* 设置文本居中对齐 */
+  font-size: 10em; /* 设置字体大小为10倍（1000%） */
+  line-height: 0.7em; /* 设置行高为0.7倍（70%） */
+  color: #333; /* 设置字体颜色为深灰色 */
+  margin-top: -80px; /* 与顶部的距离为-80像素，向上偏移标题以实现视觉居中 */
+}
+
+/* 定义 .container 内部的 h2 元素中的 span 元素样式 */
+.container h2 span {
+  display: block;
+  color: aliceblue; /* 设置字体颜色为aliceblue */
+  font-weight: 300; /* 设置字体粗细为300 */
+  letter-spacing: 6px; /* 设置字符间距为6像素 */
+  font-size: 0.2em; /* 设置字体大小为0.2倍（20%）*/
+}
+
+/* 定义具有 .countdown 类的元素样式 */
+.countdown {
+  display: flex; /* 使用弹性布局 */
+  margin-top: 50px; /* 顶部外边距为50像素 */
+}
+
+/* 定义具有 .countdown 类的子元素样式 */
+.countdown div {
+  position: relative; /* 使用相对定位 */
+  width: 100px; /* 宽度为100像素 */
+  height: 100px; /* 高度为100像素 */
+  line-height: 100px; /* 行高为100像素 */
+  text-align: center; /* 文本居中对齐 */
+  background: #333; /* 设置背景颜色为#333 */
+  color: #fff; /* 设置字体颜色为白色 */
+  margin: 0 15px; /* 外边距，左右各为15像素 */
+  font-size: 3em; /* 设置字体大小为3倍（300%） */
+  font-weight: 500; /* 设置字体粗细为500 */
+}
+
+/* 定义 .countdown div 元素的伪元素样式 */
+.countdown div:before {
+  content: ""; /* 清除伪元素内容 */
+  position: absolute; /* 使用绝对定位 */
+  bottom: -30px; /* 从底部偏移-30像素 */
+  left: 0; /* 从左侧对齐 */
+  width: 100%; /* 宽度100% */
+  height: 35px; /* 高度35像素 */
+  background: #ff0; /* 设置背景颜色为#ff0 */
+  color: #333; /* 设置字体颜色为#333 */
+  font-size: 0.35em; /* 设置字体大小为0.35倍（35%） */
+  line-height: 35px; /* 行高为35像素 */
+  font-weight: 300; /* 设置字体粗细为300 */
+}
+
+/* 定义 .container 中具有特定 ID 的元素的伪元素样式 */
+.container #day:before {
+  content: "Days"; /* 内容为 "Days" */
+}
+
+.container #hour:before {
+  content: "Hours"; /* 内容为 "Hours" */
+}
+
+.container #minute:before {
+  content: "Minutes"; /* 内容为 "Minutes" */
+}
+
+.container #second:before {
+  content: "Seconds"; /* 内容为 "Seconds" */
+}
